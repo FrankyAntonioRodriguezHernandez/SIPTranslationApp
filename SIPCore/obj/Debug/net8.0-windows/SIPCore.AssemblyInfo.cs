@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SIPCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17e9cffe548d39bde9697d463b49c1d3ef262b32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68c0dc4affd5dd9b9f20b925d4220aa034989b6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SIPCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SIPCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
