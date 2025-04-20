@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oGJsf9QU9gg=",
+  "success": true,
+  "projectFilePath": "C:\\Franky_Zone\\Projects\\SIPTranslationApp\\SIPClient\\SIPClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\frank\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.4\\microsoft.extensions.dependencyinjection.9.0.4.nupkg.sha512",
+    "C:\\Users\\frank\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.4\\microsoft.extensions.dependencyinjection.abstractions.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

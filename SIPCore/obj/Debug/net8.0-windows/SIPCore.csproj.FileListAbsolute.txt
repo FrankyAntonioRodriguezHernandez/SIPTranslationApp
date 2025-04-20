@@ -1,0 +1,15 @@
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\bin\Debug\net8.0-windows\SIPCore.deps.json
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\bin\Debug\net8.0-windows\SIPCore.dll
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\bin\Debug\net8.0-windows\SIPCore.pdb
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\bin\Debug\net8.0-windows\OzekiSDK.dll
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.csproj.AssemblyReference.cache
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.AssemblyInfoInputs.cache
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.AssemblyInfo.cs
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.csproj.CoreCompileInputs.cache
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.sourcelink.json
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.csproj.Up2Date
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.dll
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\refint\SIPCore.dll
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\SIPCore.pdb
+C:\Franky_Zone\Projects\SIPTranslationApp\SIPCore\obj\Debug\net8.0-windows\ref\SIPCore.dll

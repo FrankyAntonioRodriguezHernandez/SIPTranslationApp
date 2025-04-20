@@ -18,16 +18,19 @@ public class SIPService : ISIPService
     public event Action<string> RegistrationStatusChanged;
     public event Action<string> TranslationStatusChanged;
 
-    public void Initialize(string username, string password, string domain, int port)
-    {
+    public void Initialize(string username = "frankyan", 
+                     string password = "hb8zRUcD8CTGS6x", 
+                     string domain = "sip.antisip.com", 
+                     int port = 5060){
         try
         {
-            _softPhone = SoftPhoneFactory.CreateSoftPhone(IPAddress.Loopback, 10000, 20000);
+            _softPhone = SoftPhoneFactory.CreateSoftPhone(IPAddress.Parse("192.168.29.25"), 10000, 20000);            
             
             var account = new SIPAccount(
                 registrationRequired: true,
                 displayName: "SIPTranslator",
                 userName: username,
+                registerName: username,  // Parámetro añadido
                 registerPassword: password,
                 domainHost: domain,
                 domainPort: port
