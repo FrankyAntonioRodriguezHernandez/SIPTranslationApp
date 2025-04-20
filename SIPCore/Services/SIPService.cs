@@ -19,40 +19,57 @@ public class SIPService : ISIPService
     public event Action<string> TranslationStatusChanged;
 
     public void Initialize(string username = "frankyan", 
-                     string password = "hb8zRUcD8CTGS6x", 
-                     string domain = "sip.antisip.com", 
-                     int port = 5060){
-        try
+                string password = "hb8zRUcD8CTGS6x", 
+                string domain = "sip.antisip.com", 
+                int port = 5060)
+{
+    try
+    {
+        _softPhone = SoftPhoneFactory.CreateSoftPhone(IPAddress.Parse("192.168.29.25"), 10000, 20000);
+        
+        var account = new SIPAccount(
+            registrationRequired: true,
+            displayName: "SIPTranslator",
+            userName: username,
+            registerName: username,
+            registerPassword: password,
+            domainHost: domain,
+            domainPort: port
+        );
+        
+        _phoneLine = _softPhone.CreatePhoneLine(account);
+        _phoneLine.RegistrationStateChanged += (sender, e) => 
         {
-            _softPhone = SoftPhoneFactory.CreateSoftPhone(IPAddress.Parse("192.168.29.25"), 10000, 20000);            
-            
-            var account = new SIPAccount(
-                registrationRequired: true,
-                displayName: "SIPTranslator",
-                userName: username,
-                registerName: username,  // Parámetro añadido
-                registerPassword: password,
-                domainHost: domain,
-                domainPort: port
-            );
-            
-            _phoneLine = _softPhone.CreatePhoneLine(account);
-            _phoneLine.RegistrationStateChanged += (sender, e) => 
+            RegistrationStatusChanged?.Invoke($"Estado registro: {e.State}");
+            if (e.State == RegState.Error)
             {
-                RegistrationStatusChanged?.Invoke($"Estado registro: {e.State}");
-            };
-            
-            _softPhone.RegisterPhoneLine(_phoneLine);
-            
-            _connector = new MediaConnector();
-            _audioSender = new PhoneCallAudioSender();
-            _audioReceiver = new PhoneCallAudioReceiver();
-        }
-        catch (Exception ex)
+                RegistrationStatusChanged?.Invoke($"Error de registro: Revisa credenciales y conexión");
+            }
+        };
+        
+        _softPhone.RegisterPhoneLine(_phoneLine);
+        
+        // Espera activa para registro (máximo 10 segundos)
+        for (int i = 0; i < 10; i++)
         {
-            CallStatusChanged?.Invoke($"Error: {ex.Message}");
+            if (_phoneLine.RegState == RegState.RegistrationSucceeded) 
+            {
+                RegistrationStatusChanged?.Invoke("¡Registrado correctamente!");
+                break;
+            }
+            Thread.Sleep(1000);
+        }
+        
+        if (_phoneLine.RegState != RegState.RegistrationSucceeded)
+        {
+            RegistrationStatusChanged?.Invoke("Error: Tiempo de espera agotado para registro");
         }
     }
+    catch (Exception ex)
+    {
+        CallStatusChanged?.Invoke($"Error inicialización: {ex.Message}");
+    }
+}
 
     public void MakeCall(string number)
     {
